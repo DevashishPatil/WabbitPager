@@ -1,23 +1,31 @@
 package com.eyepatch.wabbitpager_library;
 
 import android.os.Handler;
+import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import java.util.ArrayList;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
-public class WabbitPager extends FragmentStateAdapter {
+import java.util.ArrayList;
+import java.util.List;
+
+public class WabbitTabbedPager extends FragmentStateAdapter {
 
     ViewPager2 viewPager;
+    TabLayout tabLayout;
 
     private ArrayList<Fragment> fragmentList = new ArrayList<>();
+    private List<String> stringList = new ArrayList<>();
 
-    public WabbitPager(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public WabbitTabbedPager(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
@@ -32,26 +40,36 @@ public class WabbitPager extends FragmentStateAdapter {
         return fragmentList.size();
     }
 
-    public void addFragment(Fragment fragment){
+    public void addFragment(Fragment fragment, String title){
         fragmentList.add(fragment);
+        stringList.add(title);
     }
 
-    public void SummonPager(final WabbitPager wabbitPager, final ViewPager2 viewPager) {
+    public void SummonTabbedPager(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout) {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
                 viewPager.setAdapter(wabbitPager);
+                TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
+                    @Override
+                    public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                        tab.setText(stringList.get(position));
+                    }
+                });
+                tabLayoutMediator.attach();
             }
         });
         this.viewPager = viewPager;
+        this.tabLayout = tabLayout;
+
     }
-    public enum PagerScrollFashion{
+    public enum TabbedPagerScrollFashion{
         HORIZONTAL, VERTICAL;
 
-        PagerScrollFashion() {}
+        TabbedPagerScrollFashion() {}
     }
 
-    public void setPagerScrollFashion(PagerScrollFashion scrollFashion){
+    public void setScrollFashion(TabbedPagerScrollFashion scrollFashion){
         switch (scrollFashion){
             case VERTICAL:{
                 viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
