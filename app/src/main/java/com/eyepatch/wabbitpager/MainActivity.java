@@ -22,16 +22,17 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
 
 //        WabbitPager wabbitPager = new WabbitPager(getSupportFragmentManager(), getLifecycle());
-//        wabbitPager.addFragment(new Fragment2());
 //        wabbitPager.addFragment(new Fragment1());
+//        wabbitPager.addFragment(new Fragment2());
 //        wabbitPager.addFragment(new Fragment3());
 //        wabbitPager.SummonPager(wabbitPager, viewPagerWabbit);
+//        wabbitPager.setPagerScrollFashion(WabbitPager.PagerScrollFashion.VERTICAL);
 
         WabbitTabbedPager wabbitTabbedPager = new WabbitTabbedPager(getSupportFragmentManager(), getLifecycle());
         wabbitTabbedPager.addFragment(new Fragment1(), "Fragment1");
         wabbitTabbedPager.addFragment(new Fragment2(), "Fragment2");
         wabbitTabbedPager.addFragment(new Fragment3(), "Fragment3");
         wabbitTabbedPager.SummonTabbedPager(wabbitTabbedPager, viewPagerWabbit, tabLayout);
-        wabbitTabbedPager.setScrollFashion(WabbitTabbedPager.TabbedPagerScrollFashion.VERTICAL);
+        wabbitTabbedPager.setTabbedPagerScrollFashion(WabbitTabbedPager.TabbedPagerScrollFashion.VERTICAL);
     }
 }

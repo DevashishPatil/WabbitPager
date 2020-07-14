@@ -69,7 +69,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
         TabbedPagerScrollFashion() {}
     }
 
-    public void setScrollFashion(TabbedPagerScrollFashion scrollFashion){
+    public void setTabbedPagerScrollFashion(TabbedPagerScrollFashion scrollFashion){
         switch (scrollFashion){
             case VERTICAL:{
                 viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
