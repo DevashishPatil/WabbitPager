@@ -63,6 +63,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
+
                 viewPager.setAdapter(wabbitPager);
                 TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override
