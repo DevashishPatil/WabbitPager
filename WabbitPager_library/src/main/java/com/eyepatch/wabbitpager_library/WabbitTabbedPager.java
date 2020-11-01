@@ -49,6 +49,16 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
         fragmentList = fragment;
     }
 
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
+    }
+
+    @Override
+    public boolean containsItem(long itemId) {
+        return super.containsItem(itemId);
+    }
+
     public void SummonTabbedPager(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout, final Button nextBtn, final Button prevBtn, final Context currentContext, final Class nextClass) {
         new Handler().post(new Runnable() {
             @Override
