@@ -81,7 +81,6 @@ public class WabbitPager extends FragmentStateAdapter {
 
                         if (FragPos == fragmentList.size()) {
                             Intent intent = new Intent(currentContext,nextClass);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
                             currentContext.startActivity(intent);
                         }
                     }
@@ -145,7 +144,6 @@ public class WabbitPager extends FragmentStateAdapter {
 
                         if (FragPos == fragmentList.size()) {
                             Intent intent = new Intent(currentContext,nextClass);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
                             currentContext.startActivity(intent);
                         }
                     }
