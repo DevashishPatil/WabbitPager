@@ -59,7 +59,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
         return super.containsItem(itemId);
     }
 
-    public void SummonTabbedPager(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout, final Button nextBtn, final Button prevBtn, final Context currentContext, final Class nextClass) {
+    public void SummonTabbedPager(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout, final Button nextBtn, final Button prevBtn, final Context currentContext, final Class nextClass, final String bundle) {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -91,6 +91,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
 
                                 if (FragPos == fragmentList.size()) {
                                     Intent intent = new Intent(currentContext,nextClass);
+                                    intent.putExtra("extraData", bundle);
                                     currentContext.startActivity(intent);
                                 }
                             }
@@ -124,7 +125,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
 
     }
 
-    public void SummonTabbedPagerSkip(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout, final Button nextBtn, final Button prevBtn, final TextView skipBtn, final Context currentContext, final Class nextClass) {
+    public void SummonTabbedPagerSkip(final WabbitTabbedPager wabbitPager, final ViewPager2 viewPager, final TabLayout tabLayout, final Button nextBtn, final Button prevBtn, final TextView skipBtn, final Context currentContext, final Class nextClass, final String bundle) {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -155,6 +156,7 @@ public class WabbitTabbedPager extends FragmentStateAdapter {
 
                                 if (FragPos == fragmentList.size()) {
                                     Intent intent = new Intent(currentContext,nextClass);
+                                    intent.putExtra("extraData", bundle);
                                     currentContext.startActivity(intent);
                                 }
                             }

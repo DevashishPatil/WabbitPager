@@ -54,7 +54,7 @@ public class WabbitPager extends FragmentStateAdapter {
         fragmentList = fragment;
     }
 
-    public void SummonPagerSkip(final WabbitPager wabbitPager, final ViewPager2 viewPager, final Button nextBtn, final Button prevBtn, final TextView skipBtn, final Context currentContext, final Class nextClass) {
+    public void SummonPagerSkip(final WabbitPager wabbitPager, final ViewPager2 viewPager, final Button nextBtn, final Button prevBtn, final TextView skipBtn, final Context currentContext, final Class nextClass, final String bundle) {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -81,6 +81,7 @@ public class WabbitPager extends FragmentStateAdapter {
 
                         if (FragPos == fragmentList.size()) {
                             Intent intent = new Intent(currentContext,nextClass);
+                            intent.putExtra("extraData", bundle);
                             currentContext.startActivity(intent);
                         }
                     }
@@ -117,7 +118,7 @@ public class WabbitPager extends FragmentStateAdapter {
         this.viewPager = viewPager;
     }
 
-    public void SummonPager(final WabbitPager wabbitPager, final ViewPager2 viewPager, final Button nextBtn, final Button prevBtn, final Context currentContext, final Class nextClass) {
+    public void SummonPager(final WabbitPager wabbitPager, final ViewPager2 viewPager, final Button nextBtn, final Button prevBtn, final Context currentContext, final Class nextClass, final String bundle) {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -144,6 +145,7 @@ public class WabbitPager extends FragmentStateAdapter {
 
                         if (FragPos == fragmentList.size()) {
                             Intent intent = new Intent(currentContext,nextClass);
+                            intent.putExtra("extraData", bundle);
                             currentContext.startActivity(intent);
                         }
                     }
