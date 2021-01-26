@@ -1,6 +1,6 @@
 # WabbitPager
 
-[![Jitpack](https://jitpack.io/v/DevashishPatil/WabbitPager.svg)](https://jitpack.io/#DevashishPatil/WabbitPager) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/DevashishPatil/WabbitPager/blob/master/LICENSE)  [![LinkedIn](https://img.shields.io/static/v1.svg?label=Linkedin&message=DevashishPatil&color=blue)](https://www.linkedin.com/in/devashish-patil-50b823194/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/DevashishPatil/WabbitPager/blob/master/LICENSE)  [![Jitpack](https://jitpack.io/v/DevashishPatil/WabbitPager.svg)](https://jitpack.io/#DevashishPatil/WabbitPager) [![LinkedIn](https://img.shields.io/static/v1.svg?label=Linkedin&message=DevashishPatil&color=blue)](https://www.linkedin.com/in/devashish-patil-50b823194/)
 
 WabbitPager is a android library which is intended to make the user experience more fun with easy implementation of android ViewPager 2 for the On-Boarding Screen and many other things with multiple functions.
 
